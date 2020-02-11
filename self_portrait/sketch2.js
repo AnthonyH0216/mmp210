@@ -8,7 +8,9 @@ function setup() {
 
 function draw() {
 	background("blue");
-	ellipse(320, 180, 100)
-	triangle(320, 190, 240, 110,270, 180)
-	triangle(320, 190, 400, 110,370, 180)
+
+	ellipse(320, 180, 200)//face
+
+	quad(380, 70, 220, 90, 270, 180)//hair left
+	quad(320, 190, 400, 110,370, 180)//hair right
 }
