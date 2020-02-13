@@ -29,11 +29,21 @@ function draw() {
 	ellipse(280, 170, 29);//left pupil
 
 //nose
+	fill('black')
 	line(320, 210, 308, 205)
 	line(320, 210, 332, 205)
 	line(326, 170, 332, 205)
 	line(326, 170, 332, 160)
 
+//mouth
+	fill('black')
+	rect(280, 230, 80, 2, 10);//mouth
+
+//mustache
+	fill('black')
+	line(318,215,280,225)
+	line(322,215,360,225)
+	line(320,240,320,250)
 
 //hair
 	fill('black');
