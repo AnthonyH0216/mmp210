@@ -24,8 +24,8 @@ function draw() {
 	stroke('black');
 	ellipse(x, y, s);//face
 
-	x++;
-	s++;
+	//x++;
+	//s++;
 
 //eyes
 	fill('white')
@@ -52,6 +52,10 @@ function draw() {
 	line(x-2,y+35, x-40, y+45);
 	line(x+2, y+35, x+40, y+45);
 	line(x, y+60, x, y+70);
+
+//eyebrows
+	line(x-20, y-35, x-60, y-35)
+	line(x+20, y-35, x+60, y-35)
 
 //hair
 	fill('black');

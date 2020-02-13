@@ -45,6 +45,10 @@ function draw() {
 	line(322,215,360,225)
 	line(320,240,320,250)
 
+//eyebrows
+	line(300, 145, 260, 145)
+	line(340, 145, 380, 145)
+
 //hair
 	fill('black');
 	stroke('white');
