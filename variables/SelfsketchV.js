@@ -22,7 +22,7 @@ function draw() {
 //facial area
 
 	x=mouseX; 
-	y=mouseY
+	y=mouseY;
 
 	fill('tan');
 	stroke('black');
@@ -36,7 +36,7 @@ function draw() {
 	ellipse(x+40, y-10, s-160, 30, 10);//right eye
 	ellipse(x-40, y-10, s-160, 30, 10);//left eye
 
-	colorMode(mouseX)
+	color(mouseX)
 	ellipse(x+40, y-10, s-171);//right pupil
 	ellipse(x-40, y-10, s-171);//left pupil
 
@@ -70,4 +70,6 @@ function draw() {
 
 	quad(x+90, y-40, x+90, y+10, x+100, y+10, x+105, y-40);//sideburn right
 	quad(x-105, y-40, x-100, y+10, x-90, y+10, x-90, y-40);//sideburn left
+
+
 }
