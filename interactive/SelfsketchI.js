@@ -21,6 +21,9 @@ function draw() {
 
 //facial area
 
+	x=mouseX; 
+	y=mouseY;
+
 	fill('tan');
 	stroke('black');
 	ellipse(x, y, s);//face
@@ -33,7 +36,7 @@ function draw() {
 	ellipse(x+40, y-10, s-160, 30, 10);//right eye
 	ellipse(x-40, y-10, s-160, 30, 10);//left eye
 
-	fill(49, 29, 4);
+	fill(mouseX, mouseY, 200);
 	ellipse(x+40, y-10, s-171);//right pupil
 	ellipse(x-40, y-10, s-171);//left pupil
 
