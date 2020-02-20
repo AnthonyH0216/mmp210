@@ -11,13 +11,12 @@ var s = 200
 
 function setup() {
 	createCanvas(640, 360);
+	background(53,  178, 194)
 }
-
-	//shapes that are only 
-
+ 
+// transparent background
 function draw() {
-
-	background("blue");
+	background(53,  178, 194, 20); 
 
 //facial area
 
@@ -70,6 +69,12 @@ function draw() {
 
 	quad(x+90, y-40, x+90, y+10, x+100, y+10, x+105, y-40);//sideburn right
 	quad(x-105, y-40, x-100, y+10, x-90, y+10, x-90, y-40);//sideburn left
-
-
 }
+
+//face click grow
+	function mousePressed() {
+		s += 10; 
+
+		
+}
+
