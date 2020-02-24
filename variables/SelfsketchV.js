@@ -25,8 +25,8 @@ function draw() {
 	stroke('black');
 	ellipse(x, y, s);//face
 
-	//x++;
-	//s++;
+	x++;
+	s++;
 
 //eyes
 	fill('white')
