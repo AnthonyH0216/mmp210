@@ -8,6 +8,7 @@ mmp210
 var x = 320
 var y = 180
 var s = 200	
+var r = 255, g = 255, b = 255; // initialize rgb globally
 
 function setup() {
 	createCanvas(640, 360);
@@ -61,7 +62,7 @@ function draw() {
 	line(x+20, y-35, x+60, y-35)
 
 //hair
-	fill('black');
+	fill( r, g, b);
 	stroke('white');
 	strokeWeight('1');
 	quad(x+40, y-100, x+100, y-70, x+100, y-20, x+20, y-70);//hair right
@@ -75,6 +76,9 @@ function draw() {
 	function mousePressed() {
 		s += 10; 
 
-		
+//hair change color if clicked
+	r = map(mouseX, 0, width, 0, 255); // red
+    g = map(mouseY, 0, height, 255, 0); // green
+	b = map((mouseX + mouseY) / 2, 0, width + height, 0, 255); // blue
+      
 }
-
