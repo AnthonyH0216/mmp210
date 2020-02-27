@@ -1,7 +1,8 @@
 /*
 	Meme version 1 example
 	2.25.2020
-	remember to type into searchBar "localhost:8080"
+	remember to create and start sublime server
+	and type into searchBar "localhost:8080"
 */
 
 
@@ -15,7 +16,7 @@ function preload() {
 function setup () {
 
 	var Canvas= createCanvas (500, 500); // var allows for manipulating miter limit
-	Canvas.drawingContext.miterLimit = 1; //prevents spikey edges on text stroke
+	Canvas.drawingContext.miterLimit = 5; //prevents spikey edges on text stroke
 }
 
 	function draw () {
@@ -26,13 +27,15 @@ function setup () {
 		image(dogImage, 0, 0, width/1, height/1);
 
 		
-		fill('blue');
-		stroke('pink');
-		strokeWeight(10);
-		textSize( 100 );
-		textStyle('ITALIC');
-		textFont('segoe UI');
-		textAlign(LEFT, CENTER);
+		fill('white');
+		stroke('black');
+		strokeWeight(6);
+		textSize( 35 );
+		textStyle('BOLD');
+		textFont('Impact');
+		textAlign(CENTER);
+
+		text('YOU GOT GAMES ON YOUR PHONE?', 250, 50)
 
 
 }
