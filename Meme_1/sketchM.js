@@ -1,17 +1,29 @@
 /*
 	Meme version 1 example
 	2.25.2020
+	remember to type into searchBar "localhost:8080"
 */
+
+
+//global scope
+var catImage; 
+
+function preload() {
+	catImage = loadImage ("CAT.jpg");
+}
 
 function setup () {
 
 	var Canvas= createCanvas (500, 500); // var allows for manipulating miter limit
-	Canvas.drawingContext.miterLimit = 1; //prevents spikey edges on twxt stroke
+	Canvas.drawingContext.miterLimit = 1; //prevents spikey edges on text stroke
 }
 
 	function draw () {
 
 		background('grey');
+
+		//draw the image
+		image(catImage, 0, 0);
 
 		
 		fill('blue');
