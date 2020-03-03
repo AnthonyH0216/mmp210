@@ -10,6 +10,7 @@ var catImage;
 
 function preload() {
 	catImage = loadImage ("CAT.jpg");
+	pantherImage = loadImage ('Panther.jpg')
 }
 
 function setup () {
@@ -23,7 +24,11 @@ function setup () {
 		background('grey');
 
 		//draw the image
-		image(catImage, 0, 0);
+		if (mouseIsPressed) {
+			image(pantherImage, 0, 0);
+		} else {
+			image(catImage, 0, 0);
+		}
 
 		
 		fill('blue');
@@ -36,9 +41,15 @@ function setup () {
 
 		//text('hello world', 10, 250); sample text
 
-	 	var hello = 'hello world';
-		var n = map(frameCount, 0, 400, 0, hello.length);
-		text(hello.charAt(n), 0, 250)
+	 	var hello = "hello world";
+	 	if (mouseIsPressed) {
+	 		hello = "goodbye world"
+	 		textSize(70)
+	 	} else {
+	 		text(hello)
+	 	}
+
+		text(hello, 0, 250)
 
 
 
@@ -51,5 +62,10 @@ function setup () {
 
 		var Welcome = "welcome to my website";
 		var end = map(frameCount, 0, 200, 0, Welcome.length);
-		text(Welcome.substring(0, end), 250, 350);
+		if (mouseIsPressed) {
+			Welcome = "I'm a Panther"
+			} else {
+				Welcome
+			}
+		text(Welcome, 250, 350);
 	}
