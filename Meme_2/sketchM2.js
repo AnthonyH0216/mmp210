@@ -11,6 +11,7 @@ var dogImage;
 
 function preload() {
 	dogImage = loadImage ("dog.jpg");
+	hairImage = loadImage ("Badhairday.jpg")
 }
 
 function setup () {
@@ -24,8 +25,12 @@ function setup () {
 		background('grey');
 
 		//draw the image
-		image(dogImage, 0, 0, width/1, height/1);
 
+		if (mouseIsPressed) {
+			image (hairImage, 0, 0, width/1, height/1)
+		} else {
+			image (dogImage, 0, 0, width/1, height/1);
+		}
 		
 		fill('white');
 		stroke('black');
@@ -35,7 +40,13 @@ function setup () {
 		textFont('Impact');
 		textAlign(CENTER);
 
-		text('YOU GOT GAMES ON YOUR PHONE?', 250, 50)
-
-
+		var games = "YOU GOT GAMES ON YOUR PHONE?"
+		var hair = "I LOVE IT"
+		if (mouseIsPressed) {
+			games = "WHEN YOUR BARBER CUTS YOUR HAIR HORRIBLY"
+			text(hair, 250, 480);
+		} else {
+			games
+		}
+		text(games, 0, 50, width);
 }
