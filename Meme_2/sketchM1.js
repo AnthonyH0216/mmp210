@@ -7,6 +7,7 @@
 
 
 //global scope
+var dogImage; 
 
 function preload() {
 	dogImage = loadImage ("dog.jpg");
@@ -25,32 +26,12 @@ function setup () {
 
 		//draw the image
 
-		var face =
-		//facial area
-		fill('purple');
-		stroke('black');
-		ellipse(320, 180, 200);//face
-
-		//eyes
-		fill('white')
-		line(340, 170, 380, 170);//right eye
-		line(300, 170, 260, 170);//left eye
-
-		//nose
-		fill('black')
-		line(320, 210, 308, 205)
-		line(320, 210, 332, 205)
-		line(326, 170, 332, 205)
-		line(326, 170, 332, 160)
-
-		//mouth
-		fill('black')
-		rect(280, 230, 80, 2, 10);//mouth
-
-}
-
-
-
+		if (mouseIsPressed) {
+			image (hairImage, 0, 0, width/1, height/1)
+		} else {
+			image (dogImage, 0, 0, width/1, height/1);
+		}
+		
 		fill('white');
 		stroke('black');
 		strokeWeight(6);
@@ -61,23 +42,11 @@ function setup () {
 
 		var games = "YOU GOT GAMES ON YOUR PHONE?"
 		var hair = "I LOVE IT"
-
 		if (mouseIsPressed) {
-			if (mouseX > width/2 && mouseY < height/2)
-			image (hairImage, 0, 0, width/1, height/1)
 			games = "WHEN YOUR BARBER CUTS YOUR HAIR HORRIBLY"
 			text(hair, 250, 480);
-		} 
-		if (mouseIsPressed)
-			if (mouseX < width/2 && mouseY > height/2){
-			image (dogImage, 0, 0, width/1, height/1);
+		} else {
 			games
 		}
-
 		text(games, 0, 50, width);
-
-
-		if (mouseIsPressed)
-			if (mouseX > width/2 && mouseY > height/2)
-
 }
