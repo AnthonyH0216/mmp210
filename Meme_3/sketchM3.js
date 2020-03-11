@@ -22,53 +22,54 @@ var bSpeed = 2;
 function preload() {
 	dogImage = loadImage ("dog.jpg");
 	hairImage = loadImage ("Badhairday.jpg")
+	CatImage = loadImage ("CAT.jpg")
 }
 
 function setup () {
 
 	var Canvas= createCanvas (500, 500); // var allows for manipulating miter limit
 	Canvas.drawingContext.miterLimit = 5; //prevents spikey edges on text stroke
+	frameRate(60)
+	r = random (0,225)
+	g = random (0,225)
+	b = random (0,225)
 }
 
 function draw () {
 
 	background('yellow');
-		//background(220)
-					  if(frameCount % 100 === 0){
-					      r = random (0,225)
-					      g = random (0,225)
-					      b = random (0,225)
-					  }
-					  fill(r,g,b)
-					  noStroke()
-					  ellipse(v,n,b);
-					  
-					  v+=vSpeed;
-					  n+=nSpeed;
-					  b+=bSpeed;
-					  
-					  if(v>width-50 || v<50) {
-					    vSpeed *= -1;
-					  }
-					   if(n>width+50|| n<50) {
-					    nSpeed *= -1;
-					  }
-					   if(b>200|| b<100) {
-					    bSpeed *= -1;
-					   }
 
 		//draw the image
 
 		fill('white');
 		stroke('black');
 		strokeWeight(6);
-		textSize( 35 );
+		textSize( 30 );
 		textStyle('BOLD');
 		textFont('Impact');
 		textAlign(CENTER);
 
 		var games = "YOU GOT GAMES ON YOUR PHONE?";
 		var hair = "I LOVE IT";
+
+		if (mouseIsPressed) {
+	
+		} else {
+			image (CatImage, v, n, b, b)		  
+			v+=vSpeed;
+			n+=nSpeed;
+			b+=bSpeed;
+			if(v>width-50 || v<50) {
+			vSpeed *= -1;
+			}
+			if(n>width+50|| n<50) {
+			nSpeed *= -1;
+			}
+			if(b>200|| b<100) {
+			bSpeed *= -1;
+			}
+		}
+
 
 		if (mouseIsPressed) {
 			if (mouseX > width/2 && mouseY < height/2) {
@@ -99,9 +100,12 @@ function draw () {
 				rect(x-40, y+50, 80, 2, 10);//mouth
 			}
 			if (mouseX > width/2 && mouseY > height/2) {
-				r = random (0,225)
-				g = random (0,225)
-				b = random (0,225)
+				 if(frameCount % 30 === 0){
+					      r = random (0,225)
+					      g = random (0,225)
+					      b = random (0,225)
+					  }
+				noStroke()
 				fill(r,g,b)
 				rect(x,y,x,y)
 			}
@@ -109,9 +113,23 @@ function draw () {
 		if (mouseIsPressed) {
 		
 		} else {
-			text('Click Here',100,50)
-			text('Click Here',400,50)
-			text('Click Here',100,450)
-			text('Click Here',400,450)
+				fill('white')
+				text('Click Here',100,50)
+				text('Click Here',400,50)
+				text('Click Here',100,450)
+				text('Click Here',400,450)
 		}
+		
+		fill('white')
+		text("M", mouseX-40, mouseY)
+		fill('green')
+		text("E", mouseX-20, mouseY)
+		fill('red')
+		text("M", mouseX, mouseY)
+		fill('blue')
+		text("E", mouseX+20, mouseY)
+		fill('purple')
+		text("S", mouseX+35, mouseY)
+		
+
 }
