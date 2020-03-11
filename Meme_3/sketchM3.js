@@ -41,7 +41,7 @@ function draw () {
 					  }
 					  fill(r,g,b)
 					  noStroke()
-					  //ellipse(v,n,b);
+					  ellipse(v,n,b);
 					  
 					  v+=vSpeed;
 					  n+=nSpeed;

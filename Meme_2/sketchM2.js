@@ -1,12 +1,15 @@
 /*
 	Meme version 1 example
 	2.25.2020
-	remember to create and start sublime server
+	remember to install package control and create and start sublime server
 	and type into searchBar "localhost:8080"
 */
 
 
 //global scope
+var x = 160;
+var y = 160;
+var r,g,b;
 
 function preload() {
 	dogImage = loadImage ("dog.jpg");
@@ -19,37 +22,11 @@ function setup () {
 	Canvas.drawingContext.miterLimit = 5; //prevents spikey edges on text stroke
 }
 
-	function draw () {
+function draw () {
 
-		background('grey');
+		background('yellow');
 
 		//draw the image
-
-		var face =
-		//facial area
-		fill('purple');
-		stroke('black');
-		ellipse(320, 180, 200);//face
-
-		//eyes
-		fill('white')
-		line(340, 170, 380, 170);//right eye
-		line(300, 170, 260, 170);//left eye
-
-		//nose
-		fill('black')
-		line(320, 210, 308, 205)
-		line(320, 210, 332, 205)
-		line(326, 170, 332, 205)
-		line(326, 170, 332, 160)
-
-		//mouth
-		fill('black')
-		rect(280, 230, 80, 2, 10);//mouth
-
-}
-
-
 
 		fill('white');
 		stroke('black');
@@ -59,25 +36,53 @@ function setup () {
 		textFont('Impact');
 		textAlign(CENTER);
 
-		var games = "YOU GOT GAMES ON YOUR PHONE?"
-		var hair = "I LOVE IT"
+		var games = "YOU GOT GAMES ON YOUR PHONE?";
+		var hair = "I LOVE IT";
 
 		if (mouseIsPressed) {
-			if (mouseX > width/2 && mouseY < height/2)
-			image (hairImage, 0, 0, width/1, height/1)
-			games = "WHEN YOUR BARBER CUTS YOUR HAIR HORRIBLY"
-			text(hair, 250, 480);
-		} 
-		if (mouseIsPressed)
-			if (mouseX < width/2 && mouseY > height/2){
-			image (dogImage, 0, 0, width/1, height/1);
-			games
+			if (mouseX > width/2 && mouseY < height/2) {
+				image (hairImage, 0, 0, width/1, height/1)
+				games = "WHEN YOUR BARBER CUTS YOUR HAIR HORRIBLY";
+				text(games, 0, 50, width);
+				text(hair, 250, 480);
+			}
+
+			if (mouseX < width/2 && mouseY > height/2) {
+				image (dogImage, 0, 0, width/1, height/1);
+				games = "YOU GOT GAMES ON YOUR PHONE?";
+				text(games, 0, 50, width);
+			}
+			if (mouseX < width/2 && mouseY < height/2) {
+				stroke('black');
+				fill('purple');
+				ellipse(x, y, 200);//face
+				fill('white')//eyes
+				line(x+30, y-20, x+70, y-20);//right eye
+				line(x-70, y-20, x-30, y-20);//left eye
+				fill('black')//nose
+				line(x, y+35, x-20, y+30)
+				line(x, y+35, x+20, y+30)
+				line(x+10, y-10, x+20, y+30)
+				line(x+10, y-10, x+20, y-25)
+				fill('black')//mouth
+				rect(x-40, y+50, 80, 2, 10);//mouth
+			}
+			if (mouseX > width/2 && mouseY > height/2) {
+				r = random (0,225)
+				g = random (0,225)
+				b = random (0,225)
+				fill(r,g,b)
+				rect(x,y,x,y)
+
+
+			}
 		}
-
-		text(games, 0, 50, width);
-
-
-		if (mouseIsPressed)
-			if (mouseX > width/2 && mouseY > height/2)
-
+		if (mouseIsPressed) {
+		
+		} else {
+			text('Click Here',100,50)
+			text('Click Here',400,50)
+			text('Click Here',100,450)
+			text('Click Here',400,450)
+		}
 }
