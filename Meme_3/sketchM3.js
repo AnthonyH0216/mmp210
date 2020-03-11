@@ -1,7 +1,7 @@
 /*
 	Meme version 1 example
 	2.25.2020
-	remember to create and start sublime server
+	remember to install package control and create and start sublime server
 	and type into searchBar "localhost:8080"
 */
 
@@ -18,6 +18,7 @@ var vSpeed = 5;
 var nSpeed = 5;
 var bSpeed = 2;
 
+
 function preload() {
 	dogImage = loadImage ("dog.jpg");
 	hairImage = loadImage ("Badhairday.jpg")
@@ -31,10 +32,9 @@ function setup () {
 
 function draw () {
 
-		background('yellow');
-
-				background(220);
-					    if(frameCount % 100 === 0){
+	background('yellow');
+		//background(220)
+					  if(frameCount % 100 === 0){
 					      r = random (0,225)
 					      g = random (0,225)
 					      b = random (0,225)
@@ -57,30 +57,7 @@ function draw () {
 					    bSpeed *= -1;
 					   }
 
-
-							//draw the image
-
-							fill('purple');
-							stroke('black');
-							ellipse(x, y, 200);//face
-
-							//eyes
-							fill('white')
-							line(220, 140, 260, 140);//right eye
-							line(100, 140, 140, 140);//left eye
-
-							//nose
-							fill('black')
-							line(320, 210, 332, 205)
-							line(326, 170, 332, 205)
-							line(326, 170, 332, 160)
-
-							//mouth
-							fill('black')
-							rect(280, 230, 80, 2, 10);//mouth
-
-
-
+		//draw the image
 
 		fill('white');
 		stroke('black');
@@ -99,8 +76,6 @@ function draw () {
 				games = "WHEN YOUR BARBER CUTS YOUR HAIR HORRIBLY";
 				text(games, 0, 50, width);
 				text(hair, 250, 480);
-				x = 100;
-				y = 100;
 			}
 
 			if (mouseX < width/2 && mouseY > height/2) {
@@ -108,16 +83,35 @@ function draw () {
 				games = "YOU GOT GAMES ON YOUR PHONE?";
 				text(games, 0, 50, width);
 			}
+			if (mouseX < width/2 && mouseY < height/2) {
+				stroke('black');
+				fill('purple');
+				ellipse(x, y, 200);//face
+				fill('white')//eyes
+				line(x+30, y-20, x+70, y-20);//right eye
+				line(x-70, y-20, x-30, y-20);//left eye
+				fill('black')//nose
+				line(x, y+35, x-20, y+30)
+				line(x, y+35, x+20, y+30)
+				line(x+10, y-10, x+20, y+30)
+				line(x+10, y-10, x+20, y-25)
+				fill('black')//mouth
+				rect(x-40, y+50, 80, 2, 10);//mouth
+			}
+			if (mouseX > width/2 && mouseY > height/2) {
+				r = random (0,225)
+				g = random (0,225)
+				b = random (0,225)
+				fill(r,g,b)
+				rect(x,y,x,y)
+			}
 		}
-
+		if (mouseIsPressed) {
 		
-
-
-		if (mouseIsPressed){
-		// if (mouseX > width/2 && mouseY > height/2)
-
+		} else {
+			text('Click Here',100,50)
+			text('Click Here',400,50)
+			text('Click Here',100,450)
+			text('Click Here',400,450)
 		}
-
-
-
 }
