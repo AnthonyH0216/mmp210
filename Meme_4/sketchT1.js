@@ -6,6 +6,8 @@
 
 //global scope
 var catImage;
+var obiImage
+var spaceImage
 var s = 1;// scale for cat image 
 var Sspeed = 1 //speed for text movement
 var speed = 0.01; // speed for scale
@@ -13,6 +15,8 @@ var speed = 0.01; // speed for scale
 //preload loads any external assets like images or sounds
 function preload(){
 	catImage = loadImage("CAT.jpg");
+	hairImage = loadImage("CanoliKenobi.jpg")
+	spaceImage = loadImage("space.jpg")
 }
 
 function setup () {
@@ -21,15 +25,43 @@ function setup () {
 }
 
 function draw() {
-	background(0);
+	background(spaceImage);
 
 	//first transformation
 	translate(width-500, height-500); //changes canvas loacation (can put pivot point on different areas)
 	
-	var r = frameCount * PI/100; // rotation speed (/100 determines speed)
+	var r = frameCount * PI/100;
+	// rotation speed (/100 determines speed)
 	//console.log(r);
 
 	if (mouseIsPressed) {
+
+		translate(width/2, height/2)
+
+		push()
+		rotate(r)
+		scale(s);
+		s += speed; // rzte of animation (scales up image)
+
+		imageMode(CENTER);
+		image(hairImage, 0, 60, width/2, height/2);
+
+		if (s>2 || s<1) { 
+			speed *= -1; 
+		}
+		pop() 
+
+		push()
+		fill('white');
+		stroke('black');
+		strokeWeight(6);
+		textSize(50);
+		textStyle('Bold')
+		textFont('Impact');
+		textAlign(CENTER,CENTER)
+
+		text("HELLO THERE!", 0, 200)
+		pop()
 
 	} else {
 	push()
@@ -40,7 +72,7 @@ function draw() {
 		textAlign(CENTER,CENTER)
 
 		shearX(r)
-		text("don't click any where else", s+250,40);
+		text("Memes Ahead!!!", s+250,40);
 	pop() 
 	
 
