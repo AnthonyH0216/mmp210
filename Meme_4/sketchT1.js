@@ -60,6 +60,7 @@ function draw() {
 		textFont('Impact');
 		textAlign(CENTER,CENTER)
 
+		shearY(r)
 		text("HELLO THERE!", 0, 200)
 		pop()
 
