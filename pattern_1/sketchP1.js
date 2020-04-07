@@ -6,13 +6,9 @@
 
 function setup(){
 	createCanvas(640,360);
-	pattern();
+	frameRate(5)
 }
-function mousePressed() {
-	pattern();
-}
-
-function pattern() { 
+function draw() { 
 	background ('plum');
 
 	for (let x = 0; x <= width; x += 100) {
@@ -31,9 +27,6 @@ function pattern() {
 		let s = random(40, 120) // size
 		let y = random(s/2, height - s/2)// y position
 		fill(r,g,b);
-		ellipse(x, y, s); //face
-
-		
-
+		ellipse(x, y, s);
 	}
 }
