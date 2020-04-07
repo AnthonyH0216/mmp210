@@ -6,7 +6,7 @@
 
 function setup(){
 	createCanvas(640,360);
-	frameRate(5)
+	frameRate(6)
 }
 function draw() { 
 	background ('plum');
@@ -28,5 +28,12 @@ function draw() {
 		let y = random(s/2, height - s/2)// y position
 		fill(r,g,b);
 		ellipse(x, y, s);
+
+		var p = frameCount * PI/100;
+
+		push()
+		shearX(p)
+		rect(x, 200, 40, 10, 5)
+		pop()
 	}
 }
