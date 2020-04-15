@@ -37,7 +37,7 @@ function saveImage() {
 }
 
 function updateCircleNumber() {
-	numCircle = slider.value(); 
+	numCircles = slider.value(); 
 	/*slider.value" was into a variable (and put in the global scope) and then
 	put it into "numCircle = " */
 
