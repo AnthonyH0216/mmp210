@@ -1,6 +1,6 @@
 /*
-	nested loop example
-	5/4/2020
+	pattern version 3a
+	5/5/2020
 */
 
 var wSlider;
