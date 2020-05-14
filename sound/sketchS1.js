@@ -30,19 +30,25 @@ function draw() {
 
 	if (music.isPlaying()){
 		fill("green")
-		ellipse(100,100, 200)
+		ellipse(width,height/2, 200)
 	} else {
 		background(51);
 		fill("gold");
-		ellipse(100,100, 200);
+		ellipse(width,height/2, 200);
 	}
-
-	rect(mouseX,mouseY, 50, 10)
 
 	var pan = map (mouseX, 0, width, -1, 1);
 	music.pan(pan);
 
 	rect (mouseX,0,10,height); 
+
+	if(mouseIsPressed){
+		birdSound.play();
+		stroke("red")
+		line(mouseX, mouseY,width, mouseY)
+	}else{
+		stroke("black")
+	}
 }
 
 function volume() {
@@ -51,14 +57,16 @@ function volume() {
 	draw();
 }
 
-function mousePressed() {
-	birdSound.play();
+function keyPressed() {
 
-	if (mouseX<width/2 && mouseY<height/2){
+	if (keyCode == 32){
+			birdSound.play();
 		if (music.isPlaying()){
 			music.pause();
 		}else{
 			music.play();
 		}
 	}
+
+
 }
