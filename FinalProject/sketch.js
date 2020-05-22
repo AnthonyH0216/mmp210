@@ -21,15 +21,16 @@ function preload () {
 
 	birdSound = loadSound("pew.wav");
 	music = loadSound("8bit.wav")
-	roar = loadSound("roar.wav")
+	metal = loadSound("Metalbang.wav")
 	spaceImage = loadImage("space.jpg")
 	stationImage = loadImage("station.jpg")
+	robotImage = loadImage("robot.jpg")
 }
 
 function setup() {
 	createCanvas (640, 360);
 	birdSound.playMode("restart"); // the deftault is "sustain"
-	roar.playMode("restart")
+	metal.playMode("restart")
 
 
 	var label = createElement("label", "Volume Control:");
@@ -59,9 +60,9 @@ function draw() {
 	background(spaceImage)
 
 	if (music.isPlaying()){
-			fill('purple');
-			ellipse(width, 180, 200);//face
-
+		fill("grey")
+		ellipse(width,height/2, 200)
+		image(robotImage, width/1.25, height/2.75)
 	} else {
 		background(stationImage);
 	}
@@ -158,9 +159,6 @@ function game () {
 	
 } 
 
-
-
-
 function volume() {
 	vNumber = vSlider.value();
 	music.setVolume(vNumber);
@@ -169,7 +167,7 @@ function volume() {
 
 function mousePressed() {
 	if(mouseY>height/3 && mouseY<height/1.5){
-		roar.play();
+		metal.play();
 	}else{
 
 	}
