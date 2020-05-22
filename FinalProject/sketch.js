@@ -52,7 +52,12 @@ function setup() {
 	var patternButton=createButton("Pattern");
 	patternButton.mousePressed(win);
 
+	var saveButton = createButton("save");
+	saveButton.mousePressed(saveImage);
+}
 
+function saveImage() {
+	save("Victory.png")
 }
 
 function draw() {
@@ -163,7 +168,7 @@ function volume() {
 	vNumber = vSlider.value();
 	music.setVolume(vNumber);
 	draw();
-}
+} 
 
 function mousePressed() {
 	if(mouseY>height/3 && mouseY<height/1.5){
