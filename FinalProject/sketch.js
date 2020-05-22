@@ -11,9 +11,15 @@ var music;
 var vSlider; 
 var vNumber = 10
 
+var r = frameCount * PI/100;
+var s = 1;
+
 function preload () {
+	frameRate(60)
 	birdSound = loadSound("pew.wav");
 	music = loadSound("8bit.wav")
+	spaceImage = loadImage("space.jpg")
+	stationImage = loadImage("station.jpg")
 }
 
 function setup() {
@@ -21,22 +27,23 @@ function setup() {
 	birdSound.playMode("restart"); // the deftault is "sustain"
 
 	var label = createElement("label", "Volume Control:");
-	label.position(20,560);
+	label.position(20,580);
 
 	vSlider = createSlider(0, 20, vNumber);
-	vSlider.position(160, 560);
+	vSlider.position(160, 580);
 	vSlider.input(volume)
 }
 
 function draw() {
 
+	background(spaceImage)
+
 	if (music.isPlaying()){
-		fill("green")
-		ellipse(100,100, 200)
+			fill('purple');
+			ellipse(width, 180, 200);//face
+
 	} else {
-		background(51);
-		fill("gold");
-		ellipse(100,100, 200);
+		background(stationImage);
 	}
 	if (playerWins){
 		win ();
@@ -54,7 +61,13 @@ function win () {
 
 function game () {
 
-	rect (mouseX,mouseY,10,30); 
+	fill("yellow")
+	rect (mouseX,mouseY,30,10); 
+	rect (mouseX,mouseY-10,30,10); 
+	fill("blue")
+	triangle(mouseX - 20,mouseY,mouseX,mouseY + 30,mouseX,mouseY - 30);
+	fill("white")
+	ellipse(mouseX + 20,mouseY, 20, 10)
 
 	if(mouseIsPressed){
 		stroke("red")
@@ -62,6 +75,17 @@ function game () {
 	}else{
 		stroke("black")
 	}
+
+	push()
+
+		fill('plum');
+		textSize(35);
+		textFont('Helvetica');
+		textAlign(CENTER,CENTER)
+
+		shearX(r)
+		text("fight the monster!", s+250,40);
+	pop() 
 	
 } 
 

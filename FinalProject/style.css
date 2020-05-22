@@ -1,6 +1,36 @@
 body {
-	margin: 0;
-	overflow: hidden;
+	background: lightblue;
+
+	color: white;
+	font-family: segoe UI;
+	font-size: 20px;
+}
+
+h1, p, a {
+	font-size: 1.5em;
+}
+
+a {
+	color: white;
+	transition: color 300ms ease-in;
+}
+
+a:hover {
+	color: #6a0979;
+}
+
+
+img {
+	max-width: 100%;
+}
+
+#container {
+	max-width: 600px;
+	margin: 0 auto;
+}
+
+.link {
+	list-style: none;
 }
 
 label{
