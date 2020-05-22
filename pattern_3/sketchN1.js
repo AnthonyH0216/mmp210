@@ -3,8 +3,8 @@
 	5/4/2020
 */
 
-var wSlider;
-var heightSlider
+var wSlider ;
+var heightSlider ;
 
 function setup () {
 	createCanvas(500,500);
